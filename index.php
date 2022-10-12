@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        Proyecto
+        Algoritmos
     </title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -45,66 +45,33 @@
             <div class="row">
                 <div class="col">
                     <h1 id="Generalidades">Generalidades</h1>
-                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-                        perspiciatis
-                        ipsa delectus quos
-                        commodi eius esse sint atque, nemo repudiandae distinctio cupiditate veritatis asperiores odit
-                        dicta
-                        quaerat vero. Fugit, debitis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-                        perspiciatis
-                        ipsa delectus quos
-                        commodi eius esse sint atque, nemo repudiandae distinctio cupiditate veritatis asperiores odit
-                        dicta
-                        quaerat vero. Fugit, debitisLorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-                        perspiciatis
-                        ipsa delectus quos
-                        commodi eius esse sint atque, nemo repudiandae distinctio cupiditate veritatis asperiores odit
-                        dicta
-                        quaerat vero. Fugit, debitisLorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-                        perspiciatis
-                        ipsa delectus quos
-                        commodi eius esse sint atque, nemo repudiandae distinctio cupiditate veritatis asperiores odit
-                        dicta
-                        quaerat vero. Fugit, debitisLorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-                        perspiciatis
-                        ipsa delectus quos
-                        commodi eius esse sint atque, nemo repudiandae distinctio cupiditate veritatis asperiores odit
-                        dicta
-                        quaerat vero. Fugit, debitisLorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-                        perspiciatis
-                        ipsa delectus quos
-                        commodi eius esse sint atque, nemo repudiandae distinctio cupiditate veritatis asperiores odit
-                        dicta
-                        quaerat vero. Fugit, debitisLorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-                        perspiciatis
-                        ipsa delectus quos
-                        commodi eius esse sint atque, nemo repudiandae distinctio cupiditate veritatis asperiores odit
-                        dicta
-                        quaerat vero. Fugit, debitisLorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-                        perspiciatis
-                        ipsa delectus quos
-                        commodi eius esse sint atque, nemo repudiandae distinctio cupiditate veritatis asperiores odit
-                        dicta
-                        quaerat vero. Fugit, debitis</p>
+                    <p class="text-justify">Es un algoritmo de clasificación el cual debe crear un árbol de búsqueda
+                        binario y a partir de los elementos que se van a clasificar y luego recorre el árbol ( InOrden )
+                        para que los elementos se muestren de forma ordenada.</p>
+                    <ul>
+                        <li>Se puede usar como un ordenamiento único</li>
+                        <li>Es equivalente al ordenamiento Quicksort(Ya que ambos recursivamente dividen los elementos
+                            en función de un pivote)</li>
+                        <li>Es complejo e ineficiente si el árbol es desproporcional</li>
+
+                    </ul>
                 </div>
             </div>
             <div class="row">
                 <h2 id="Funcionamiento">Funcionamiento</h2>
                 <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-                        perspiciatis
-                        ipsa delectus quos
-                        commodi eius esse sint atque, nemo repudiandae distinctio cupiditate veritatis asperiores odit
-                        dicta
-                        quaerat vero. Fugit, debitis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-                        perspiciatis
-                        ipsa delectus quos
-                        commodi eius esse sint atque, nemo repudiandae distinctio cupiditate veritatis asperiores odit
-                        dicta
-                        quaerat vero. Fugit, debitisLorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-                        perspiciatis
-                        ipsa delectus quos
- </p>
+                    <p class="text-justify">El algoritmo consta de 3 pasos para su funcionamiento y son los siguientes:
+                    </p><br>
+                    <ol class="text-justify">
+                        <li><b>Paso 1:</b> Tome la entrada de elementos en una matriz.</li>
+                        <li><b>Paso 2:</b> crear un árbol de búsqueda binaria insertando elementos de datos de la matriz
+                            en el árbol de búsqueda binaria.</li>
+                        <li><b>Paso 3:</b> Realice un recorrido en orden en el árbol para ordenar los elementos.</li>
+                    </ol><br>
+                    <p class="text-justify">La representación temporal de este algoritmo es <b> de O(n log n)</b>
+                        en el caso promedio y de <b>O(n <sup>2</sup> ) </b> en el peor de los casos (Este escenario
+                        para cuando el árbol está desbalanceado o está parcialmente ordenado el arreglo)
+                    </p>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/n2MLjGeK7qA"
@@ -162,7 +129,7 @@
 
                             <div class="adjunto">
                                 <input type="file" name="adjunto[]" class="form-control" aria-label="file example"
-                                    id="adjunto[]" accept=".txt" multiple="" disabled>
+                                    id="adjunto[]" accept=".txt" multiple="" disabled required>
                             </div>
                         </div>
                         <div class="col-8">
@@ -292,7 +259,7 @@
         console.log('Vamos a deshabilitar el campo para el adjunto');
         inicio.disabled = false;
     });
-   
+
     $(window).load(function() {
         $(".loader").fadeOut("slow");
     });
