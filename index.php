@@ -104,14 +104,7 @@
                         quaerat vero. Fugit, debitisLorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
                         perspiciatis
                         ipsa delectus quos
-                        commodi eius esse sint atque, nemo repudiandae distinctio cupiditate veritatis asperiores odit
-                        dicta
-                        quaerat vero. Fugit, debitisLorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-                        perspiciatis
-                        ipsa delectus quos
-                        commodi eius esse sint atque, nemo repudiandae distinctio cupiditate veritatis asperiores odit
-                        dicta
-                        quaerat vero. </p>
+ </p>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/n2MLjGeK7qA"
