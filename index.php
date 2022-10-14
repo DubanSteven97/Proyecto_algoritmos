@@ -46,7 +46,7 @@
                 <div class="col">
                     <h1 id="Generalidades">Generalidades</h1>
                     <p class="text-justify">Es un algoritmo de clasificación el cual debe crear un árbol de búsqueda
-                        binario y a partir de los elementos que se van a clasificar y luego recorre el árbol ( InOrden )
+                        binario a partir de los elementos que se van a clasificar y luego recorre el árbol ( InOrden )
                         para que los elementos se muestren de forma ordenada.</p>
                     <ul>
                         <li>Se puede usar como un ordenamiento único</li>
