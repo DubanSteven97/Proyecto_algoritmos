@@ -78,6 +78,12 @@
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
+
+                    <div class="card">
+                        <div class="card-body">
+                            Tree Sort | GeeksforGeeks. (2017b, agosto 20). YouTube
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -129,7 +135,7 @@
 
                             <div class="adjunto">
                                 <input type="file" name="adjunto[]" class="form-control" aria-label="file example"
-                                    id="adjunto[]" accept=".txt" multiple="" disabled required>
+                                    id="adjunto[]" accept=".txt, .csv" multiple="" disabled required>
                             </div>
                         </div>
                         <div class="col-8">
@@ -154,7 +160,7 @@
                             <div class="iteraciones">
                                 <label for="Iteraciones" class="form-label">Iteraciones</label>
                                 <input type=" number" class="form-control" id="Iteraciones" name="Iteraciones"
-                                    aria-describedby="emailHelp" min="1" pattern="^[0-9]+" required disabled>
+                                    aria-describedby="emailHelp"  pattern="^[0-9]+" min="10" required disabled>
                             </div>
                         </div>
                         <div class="col-8">
