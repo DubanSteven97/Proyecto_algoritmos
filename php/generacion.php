@@ -2,11 +2,16 @@
     include("GeneracionArray.php");
     include("CargueArchivo.php");
     include("TreeSort.php");
+    include("bubbleSort.php");
+    include("insertionSort.php");
 
     $generararreglo= new GeneracionArray;
     $leerArchivo= new cargueArchivo;
     $ordenamiento_TreeSort = new implementacion();
+    $ordenamiento_bubblesort = new bubbleSort();
+    $ordenamiento_insertionSort = new insertionSort();
 
+    
     $arreglo_tiempos;
     $arreglo_iteraciones;
     $arreglo_nombres;
@@ -14,6 +19,8 @@
 	$algoritmo=$_POST['algoritmo'];
 
     $tipo_cargue=$_POST['flexRadioDefault'];
+
+
 
     if($tipo_cargue == "archivo"){
 
@@ -52,6 +59,11 @@
             }
         }
 
+        for ($i = 0; $i < count($_FILES["adjunto"]); $i++) {
+            $arreglo_tiempos[$i]=0;
+            $arreglo_tiempos_2[$i]=0;
+            $arreglo_tiempos_3[$i]=0;
+        }
     }else{
         $nombre_archivo="null";
  	    $datos_inicio = $_POST['numeros_inicio'];
@@ -66,56 +78,123 @@
         if( $avance_iteracion == "Otro"){
             $avance_iteracion=$_POST['otro2'];
         }  
+
+        for ($i = 0; $i < $_POST['Iteraciones']; $i++) {
+            $arreglo_tiempos[$i]=0;
+            $arreglo_tiempos_2[$i]=0;
+            $arreglo_tiempos_3[$i]=0;
+        }
     }
 
+    for ($j = 0; $j < count($algoritmo); $j++) {
+        switch ($algoritmo[$j]) {
+            case "Tree sort":
+                for ($i = 0; $i < $iteraciones; $i++) {
+                    if($tipo_cargue=="archivo"){  
+                        $arreglo=$leerArchivo->leerArchivo($arreglo_nombres[$i]);
+                        $datos_inicio= count($arreglo);
 
- 
-    switch ($algoritmo) {
-        case "Tree sort":
-            for ($i = 0; $i < $iteraciones; $i++) {
-                if($tipo_cargue=="archivo"){  
-                     $arreglo=$leerArchivo->leerArchivo($arreglo_nombres[$i]);
-                     $datos_inicio= count($arreglo);
+                        $tiempo_inicial = microtime(true);
+                        $ordenamiento_TreeSort-> crearArbol($arreglo);
+                        $tiempo_final = microtime(true);
+                        
+                        $tiempo = $tiempo_final - $tiempo_inicial;
+                
+                        $arreglo_tiempos[$i]=$tiempo;
+                        $arreglo_iteraciones[$i]=$datos_inicio;
+                    }elseif($tipo_cargue=="aleatorios"){
+                        if($tipo_dato=="numerico"){
+                            $arreglo=$generararreglo -> arrayNumerico($datos_inicio);
+                        }elseif($tipo_dato=="letras"){
+                            $arreglo=$generararreglo -> arrayPalabras($datos_inicio);
+                        } 
 
-                     $tiempo_inicial = microtime(true);
-                     $ordenamiento_TreeSort-> crearArbol($arreglo);
-                     $tiempo_final = microtime(true);
-                    
-                     $tiempo = $tiempo_final - $tiempo_inicial;
-            
-                     $arreglo_tiempos[$i]=$tiempo;
-                     $arreglo_iteraciones[$i]=$datos_inicio;
-                 }elseif($tipo_cargue=="aleatorios"){
-                     if($tipo_dato=="numerico"){
-                         $arreglo=$generararreglo -> arrayNumerico($datos_inicio);
-                     }elseif($tipo_dato=="letras"){
-                         $arreglo=$generararreglo -> arrayPalabras($datos_inicio);
-                     } 
+                        $tiempo_inicial = microtime(true);
+                        $ordenamiento_TreeSort-> crearArbol($arreglo);
+                        $tiempo_final = microtime(true);
+                        
+                        $tiempo = $tiempo_final - $tiempo_inicial;
+                
+                        $arreglo_tiempos[$i]=$tiempo;
+                        $arreglo_iteraciones[$i]=$datos_inicio;
 
-                     $tiempo_inicial = microtime(true);
-                     $ordenamiento_TreeSort-> crearArbol($arreglo);
-                     $tiempo_final = microtime(true);
-                    
-                     $tiempo = $tiempo_final - $tiempo_inicial;
-            
-                     $arreglo_tiempos[$i]=$tiempo;
-                     $arreglo_iteraciones[$i]=$datos_inicio;
+                        $datos_inicio = $datos_inicio + $avance_iteracion ;
+                    }
+                }
+                break;
+            case "bubbleSort":
+                for ($i = 0; $i < $iteraciones; $i++) {
+                    if($tipo_cargue=="archivo"){  
+                        $arreglo=$leerArchivo->leerArchivo($arreglo_nombres[$i]);
+                        $datos_inicio= count($arreglo);
 
-                     $datos_inicio = $datos_inicio + $avance_iteracion ;
-                 }
-             }
+                        $tiempo_inicial = microtime(true);
+                        $ordenamiento_bubblesort-> ordenarbubblesort($arreglo);
+                        $tiempo_final = microtime(true);
+                        
+                        $tiempo2 = $tiempo_final - $tiempo_inicial;
+                
+                        $arreglo_tiempos_2[$i]=$tiempo2;
+                        $arreglo_iteraciones[$i]=$datos_inicio;
+                    }elseif($tipo_cargue=="aleatorios"){
+                        if($tipo_dato=="numerico"){
+                            $arreglo=$generararreglo -> arrayNumerico($datos_inicio);
+                        }elseif($tipo_dato=="letras"){
+                            $arreglo=$generararreglo -> arrayPalabras($datos_inicio);
+                        } 
+
+                        $tiempo_inicial = microtime(true);
+                        $ordenamiento_bubblesort-> ordenarbubblesort($arreglo);
+                        $tiempo_final = microtime(true);
+                        
+                        $tiempo2 = $tiempo_final - $tiempo_inicial;
+                
+                        $arreglo_tiempos_2[$i]=$tiempo2;
+                        $arreglo_iteraciones[$i]=$datos_inicio;
+
+                        $datos_inicio = $datos_inicio + $avance_iteracion ;
+                    }
+                }
+                break;
+            case "insertionSort":
+                for ($i = 0; $i < $iteraciones; $i++) {
+                    if($tipo_cargue=="archivo"){  
+                        $arreglo=$leerArchivo->leerArchivo($arreglo_nombres[$i]);
+                        $datos_inicio= count($arreglo);
+
+                        $tiempo_inicial = microtime(true);
+                        $ordenamiento_insertionSort-> insertion_Sort($arreglo);
+                        $tiempo_final = microtime(true);
+                        
+                        $tiempo2 = $tiempo_final - $tiempo_inicial;
+                
+                        $arreglo_tiempos_3[$i]=$tiempo2;
+                        $arreglo_iteraciones[$i]=$datos_inicio;
+                    }elseif($tipo_cargue=="aleatorios"){
+                        if($tipo_dato=="numerico"){
+                            $arreglo=$generararreglo -> arrayNumerico($datos_inicio);
+                        }elseif($tipo_dato=="letras"){
+                            $arreglo=$generararreglo -> arrayPalabras($datos_inicio);
+                        } 
+
+                        $tiempo_inicial = microtime(true);
+                        $ordenamiento_insertionSort-> insertion_Sort($arreglo);
+                        $tiempo_final = microtime(true);
+                        
+                        $tiempo2 = $tiempo_final - $tiempo_inicial;
+                
+                        $arreglo_tiempos_3[$i]=$tiempo2;
+                        $arreglo_iteraciones[$i]=$datos_inicio;
+
+                        $datos_inicio = $datos_inicio + $avance_iteracion ;
+                    }
+                }                
+                break;
+            default;
+                echo '<script language="javascript">alert("¡Seleccione un algoritmo!\n");location.href="../index.php";</script>';
             break;
-        case "Otro1":
-            echo '<script language="javascript">alert("¡El algoritmo no esta disponible!\n");location.href="../index.php";</script>';
-            break;
-        case "Otro2":
-            echo '<script language="javascript">alert("¡El algoritmo no esta disponible!\n");location.href="../index.php";</script>';
-            break;
-        default;
-            echo '<script language="javascript">alert("¡Seleccione un algoritmo!\n");location.href="../index.php";</script>';
-        break;
+        }
     }
-
 
 
 ?>
@@ -142,12 +221,12 @@
     function drawChart() {
         var data = google.visualization.arrayToDataTable(
             [
-                ['Iteraciones', 'Tiempo'],
+                ['Iteraciones', 'Tiempo Tree sort', 'Tiempo Bubble Sort','Insertion Sort'],
                 <?php
 
 
         for ($i = 0; $i <= count( $arreglo_iteraciones)-1; $i++) {
-            echo('['.$arreglo_iteraciones[$i].', '.$arreglo_tiempos[$i].'],');
+            echo('['.$arreglo_iteraciones[$i].', '.$arreglo_tiempos[$i].','.$arreglo_tiempos_2[$i].','.$arreglo_tiempos_3[$i].'],');
         }
       
 
@@ -173,10 +252,10 @@
 </head>
 
 <body>
-    <div class="loading"></div> 
+    <div class="loading"></div>
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.php">Tree sort</a>
+            <a class="navbar-brand" href="../index.php">Algoritmos</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -201,42 +280,48 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <table class="table table-dark table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col"># Iteraciones</th>
-                                <th scope="col">Número de ejecuciones</th>
-                                <th scope="col">Tiempo</th>
-                                <?php
+                    <div style=" position: relative; height: 200px; overflow: auto;">
+                        <table class="table table-dark table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col"># Iteraciones</th>
+                                    <th scope="col">Número de ejecuciones</th>
+                                    <th scope="col">Tiempo Tree sort</th>
+                                    <th scope="col">Tiempo Bubble Sort</th>
+                                    <th scope="col">Insertion Sort</th>
+                                    <?php
                                     if($tipo_cargue == "archivo"){
                                 ?>
-                                <th scope="col">Nombre Archivo</th>
-                                <?php
+                                    <th scope="col">Nombre Archivo</th>
+                                    <?php
                                     }
                                 ?>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
                                 for ($i = 0; $i <= count( $arreglo_iteraciones)-1; $i++) {
                             ?>
-                            <tr>
-                                <td><?php echo($i+1);?></td>
-                                <td><?php echo($arreglo_iteraciones[$i]);?></td>
-                                <td><?php echo($arreglo_tiempos[$i]);?></td>
-                                <?php
+                                <tr>
+                                    <td><?php echo($i+1);?></td>
+                                    <td><?php echo($arreglo_iteraciones[$i]);?></td>
+                                    <td><?php echo($arreglo_tiempos[$i]);?></td>
+                                    <td><?php echo($arreglo_tiempos_2[$i]);?></td>
+                                    <td><?php echo($arreglo_tiempos_3[$i]);?></td>
+                                    <?php
                                     if($tipo_cargue == "archivo"){
                                 ?>
-                                 <td><?php echo($arreglo_nombres[$i]);?></td>
-                                <?php
+                                    <td><?php echo($arreglo_nombres[$i]);?></td>
+                                    <?php
                                     }
                                 ?>
-                            </tr>
-                            <?php
+                                </tr>
+                                <?php
                                 }
                             ?>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div><br>
@@ -249,9 +334,9 @@
     </footer>
 
     <script>
-        $(window).load(function() {
-            $(".loader").fadeOut("slow");
-        });
+    $(window).load(function() {
+        $(".loader").fadeOut("slow");
+    });
     </script>
 </body>
 

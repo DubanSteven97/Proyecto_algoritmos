@@ -92,13 +92,15 @@
                     <form class="row g-3" name="formulario" action="php/generacion.php" enctype="multipart/form-data"
                         method="post" enctype="multipart/form-data" required>
                         <div class="col-12">
-                            <select class="form-select" aria-label="Default select example" id="algoritmo"
-                                name="algoritmo">
+                            <select class="form-select" multiple aria-label="multiple select example" id="algoritmo"
+                                name="algoritmo[]" required>
                                 <option disabled>Algoritmos de organización</option>
                                 <option value="Tree sort">Tree sort</option>
-                                <option value="Otro1">Otro 1</option>
-                                <option value="Otro2">Otro 1 </option>
+                                <option value="bubbleSort">Bubble Sort</option>
+                                <option value="insertionSort">Insertion Sort</option>
                             </select>
+                            <div id="emailHelp" class="form-text">Para seleccionar más de un algoritmo debe dar CTRL +
+                                clic en los algoritmos a seleccionar</div>
                         </div>
                         <div class="col-4">
                             <div class="form-check">
@@ -140,8 +142,8 @@
                         </div>
                         <div class="col-8">
                             <div class="inicio">
-                                <select class="form-select" multiple aria-label="multiple select example"
-                                    id="numeros_inicio" name="numeros_inicio" required disabled>
+                                <select class="form-select" size="5" aria-label="size 5  select example" id="numeros_inicio"
+                                    name="numeros_inicio" required disabled>
                                     <option disabled>Números de datos de inicio</option>
                                     <option value="1000" selected>1000</option>
                                     <option value="2000">2000</option>
@@ -160,13 +162,13 @@
                             <div class="iteraciones">
                                 <label for="Iteraciones" class="form-label">Iteraciones</label>
                                 <input type=" number" class="form-control" id="Iteraciones" name="Iteraciones"
-                                    aria-describedby="emailHelp"  pattern="^[0-9]+" min="10" required disabled>
+                                    aria-describedby="emailHelp" pattern="^[0-9]+" min="10" required disabled>
                             </div>
                         </div>
                         <div class="col-8">
                             <div class="avance">
-                                <select class="form-select" multiple aria-label="multiple select example"
-                                    id="avance_iteracion" name="avance_iteracion" required disabled>
+                                <select class="form-select" size="5" aria-label="size 5 select example" id="avance_iteracion"
+                                    name="avance_iteracion" required disabled>
                                     <option disabled>Avance entre iteración</option>
                                     <option value="500" selected> 500</option>
                                     <option value="1000">1000</option>
