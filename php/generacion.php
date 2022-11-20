@@ -252,17 +252,17 @@
 </head>
 
 <body>
-    <div class="loading"></div>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+<div class="loader"></div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.php">Algoritmos</a>
+            <a class="navbar-brand" href="../index.php">Tree sort</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../index.php">Inicio</a>
+                        <a class="nav-link" href="../Ejecutar.php">Demostración</a>
                     </li>
                 </ul>
             </div>
@@ -273,8 +273,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <h1 id="Generalidades">Tiempo VS Iteración <button type="button" class="btn btn-primary"
-                            onclick="location.href='../index.php'">Atrás</button></h1>
+                    <h1 id="Generalidades">Tiempo VS Iteración <button type="button" class="btn btn-dark"
+                            onclick="location.href='../Ejecutar.php'">Atrás</button></h1>
                     <div id="curve_chart" style="width: 100%; height: 500px"></div>
                 </div>
             </div>

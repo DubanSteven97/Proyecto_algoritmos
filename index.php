@@ -10,273 +10,138 @@
     <script type="text/javascript" href="js/bootstrap.min.js"></script>
     <script type="text/javascript" href="js/jquery-3.6.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <meta charset="utf-8">
 </head>
 
 <body>
-    <div class="loader"></div>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Tree sort</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Generalidades">Generalidades</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Funcionamiento">Funcionamiento</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Demostracion">Demostración</a>
-                    </li>
-                </ul>
-            </div>
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide carousel-fade shadow-2-strong" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
         </div>
-    </nav>
 
-    <main class="main">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h1 id="Generalidades">Generalidades</h1>
-                    <p class="text-justify">Es un algoritmo de clasificación el cual debe crear un árbol de búsqueda
-                        binario a partir de los elementos que se van a clasificar y luego recorre el árbol ( InOrden )
-                        para que los elementos se muestren de forma ordenada.</p>
-                    <ul>
-                        <li>Se puede usar como un ordenamiento único</li>
-                        <li>Es equivalente al ordenamiento Quicksort(Ya que ambos recursivamente dividen los elementos
-                            en función de un pivote)</li>
-                        <li>Es complejo e ineficiente si el árbol es desproporcional</li>
-
-                    </ul>
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/slider.jpg" alt="Tree sort" class="d-block" id="slider1">
+                <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
+                    <h1 class="display-1"><b>Tree sort</b></h1>
                 </div>
             </div>
-            <div class="row">
-                <h2 id="Funcionamiento">Funcionamiento</h2>
-                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <p class="text-justify">El algoritmo consta de 3 pasos para su funcionamiento y son los siguientes:
-                    </p><br>
-                    <ol class="text-justify">
-                        <li><b>Paso 1:</b> Tome la entrada de elementos en una matriz.</li>
-                        <li><b>Paso 2:</b> crear un árbol de búsqueda binaria insertando elementos de datos de la matriz
-                            en el árbol de búsqueda binaria.</li>
-                        <li><b>Paso 3:</b> Realice un recorrido en orden en el árbol para ordenar los elementos.</li>
-                    </ol><br>
-                    <p class="text-justify">La representación temporal de este algoritmo es <b> de O(n log n)</b>
-                        en el caso promedio y de <b>O(n <sup>2</sup> ) </b> en el peor de los casos (Este escenario
-                        para cuando el árbol está desbalanceado o está parcialmente ordenado el arreglo)
-                    </p>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/n2MLjGeK7qA"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+            <div class="carousel-item">
+                <img src="images/slider.jpg" alt="Generalidades" class="d-block" id="slider2">
+                <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
+                    <div class="text-white text-center">
+                        <h2 class="mb-3 display-1"><b>Generalidades</b></h2>
+                        <p class="text-start fs-4">Es un algoritmo de clasificación el cual debe crear un árbol de
+                            búsqueda
+                            binario a partir de los elementos que se van a clasificar y luego recorre el árbol ( InOrden
+                            )
+                            para que los elementos se muestren de forma ordenada.</p>
+                        <ul class="mb-3 text-start fs-4">
+                            <li>Se puede usar como un ordenamiento único</li>
+                            <li>Es equivalente al ordenamiento Quicksort(Ya que ambos recursivamente dividen los
+                                elementos
+                                en función de un pivote)</li>
+                            <li>Es complejo e ineficiente si el árbol es desproporcional</li>
 
-                    <div class="card">
-                        <div class="card-body">
-                            Tree Sort | GeeksforGeeks. (2017b, agosto 20). YouTube
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <h2 id="Demostracion">Demostración</h2><br>
-                    <form class="row g-3" name="formulario" action="php/generacion.php" enctype="multipart/form-data"
-                        method="post" enctype="multipart/form-data" required>
-                        <div class="col-12">
-                            <select class="form-select" multiple aria-label="multiple select example" id="algoritmo"
-                                name="algoritmo[]" required>
-                                <option disabled>Algoritmos de organización</option>
-                                <option value="Tree sort">Tree sort</option>
-                                <option value="bubbleSort">Bubble Sort</option>
-                                <option value="insertionSort">Insertion Sort</option>
-                            </select>
-                            <div id="emailHelp" class="form-text">Para seleccionar más de un algoritmo debe dar CTRL +
-                                clic en los algoritmos a seleccionar</div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault1" require value="aleatorios">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Datos aleatorios
-                                </label>
-                                <div class="tipo-dato">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault_tipo"
-                                            id="flexRadioDefault1_numericos" require value="numerico" disabled>
-                                        <label class="form-check-label" for="flexRadioDefault1_numericos">
-                                            Datos numéricos
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault_tipo"
-                                            id="flexRadioDefault2_letras" required value="letras" disabled>
-                                        <label class="form-check-label" for="flexRadioDefault2_letras">
-                                            Datos texto
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2" required value="archivo">
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Datos archivo
-                                </label>
-                            </div>
-
-                            <div class="adjunto">
-                                <input type="file" name="adjunto[]" class="form-control" aria-label="file example"
-                                    id="adjunto[]" accept=".txt, .csv" multiple="" disabled required>
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <div class="inicio">
-                                <select class="form-select" size="5" aria-label="size 5  select example" id="numeros_inicio"
-                                    name="numeros_inicio" required disabled>
-                                    <option disabled>Números de datos de inicio</option>
-                                    <option value="1000" selected>1000</option>
-                                    <option value="2000">2000</option>
-                                    <option value="3000">3000</option>
-                                    <option value="Otro">Otro</option>
-                                </select>
-                            </div>
-
-                            <div class="otro1">
-                                <label for="otro1" class="form-label">Otro:</label>
-                                <input type="number" class="form-control" id="otro1" name="otro1" min="1"
-                                    pattern="^[0-9]+" aria-describedby="emailHelp" required disabled>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="iteraciones">
-                                <label for="Iteraciones" class="form-label">Iteraciones</label>
-                                <input type=" number" class="form-control" id="Iteraciones" name="Iteraciones"
-                                    aria-describedby="emailHelp" pattern="^[0-9]+" min="10" required disabled>
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <div class="avance">
-                                <select class="form-select" size="5" aria-label="size 5 select example" id="avance_iteracion"
-                                    name="avance_iteracion" required disabled>
-                                    <option disabled>Avance entre iteración</option>
-                                    <option value="500" selected> 500</option>
-                                    <option value="1000">1000</option>
-                                    <option value="2000">2000</option>
-                                    <option value="Otro">Otro</option>
-                                </select>
-                            </div>
-                            <div class="otro2">
-                                <div>
-                                    <label for="otro2" class="form-label">Otro:</label>
-                                    <input type=" number" class="form-control" id="otro2" name="otro2"
-                                        aria-describedby="emailHelp" min="1" pattern="^[0-9]+" required disabled>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <center> <button type="submit" class="btn btn-primary" id="enviar"
-                                    name="enviar">Enviar</button></center>
-                        </div>
-                    </form>
+            <div class="carousel-item">
+                <img src="images/slider.jpg" alt="Funcionamiento" class="d-block" id="slider3">
+                <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
+                    <div class="text-white text-center">
+                        <h2 class="mb-3 display-1"><b>Funcionamiento</b></h2>
+                        <p class="mb-3 text-start fs-4">El algoritmo consta de 3 pasos para su funcionamiento y son los
+                            siguientes:
+                        </p><br>
+                        <ol class="mb-3 text-start fs-4">
+                            <li><b>Paso 1:</b> Tome la entrada de elementos en una matriz.</li>
+                            <li><b>Paso 2:</b> crear un árbol de búsqueda binaria insertando elementos de datos de la
+                                matriz
+                                en el árbol de búsqueda binaria.</li>
+                            <li><b>Paso 3:</b> Realice un recorrido en orden en el árbol para ordenar los elementos.
+                            </li>
+                        </ol><br>
+                        <p class="mb-3 text-start fs-4">La representación temporal de este algoritmo es <b> de O(n log
+                                n)</b>
+                            en el caso promedio y de <b>O(n <sup>2</sup> ) </b> en el peor de los casos (Este escenario
+                            para cuando el árbol está desbalanceado o está parcialmente ordenado el arreglo)
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div><br>
-    </main>
+            <div class="carousel-item">
+                <img src="images/slider.jpg" alt="Video" class="d-block" id="slider4">
+                <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
+                    <div class="text-white text-center">
 
-    <script>
-    var adjunto = document.getElementById('adjunto[]');
-    var dato1 = document.getElementById('flexRadioDefault2_letras');
-    var dato2 = document.getElementById('flexRadioDefault1_numericos');
-    var otro1 = document.getElementById('otro1');
-    var otro2 = document.getElementById('otro2');
-    var inicio = document.getElementById('numeros_inicio');
-    var iteraciones = document.getElementById('Iteraciones');
-    var avance = document.getElementById('avance_iteracion');
-    var enviar = document.getElementById('enviar');
+                        <iframe width="1000px" height="500px" src="https://www.youtube.com/embed/n2MLjGeK7qA"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <p class="mb-3 text-start fs-4"> Tree Sort | GeeksforGeeks. (2017b, agosto 20). YouTube
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/slider.jpg" alt="Demostración" class="d-block" id="slider5">
+                <div class="carousel-caption d-flex justify-content-center align-items-center h-100">
+                    <div class="text-white text-center">
+                        <h2 class="mb-3 display-1"><b>Demostración</b></h2>
+                        <p class="text-justify fs-4">En la demostración verá un formulario en el cual va a poder
+                            indicar
+                            él tipo de generación de datos (generados aleatoriamente o cargue
+                            desde un archivo), la cantidad de datos a procesar y el algoritmo con el que sé
+                            ordenará. Después de realizar la selección se visualizará la
+                            gráfica con el tiempo que tomo
+                            cada algoritmo para los diferentes sets de datos.</p>
+                        <a class="btn btn-outline-light btn-lg m-2" href="Ejecutar.php"
+                            role="button" rel="nofollow" target="_blank">Comenzar</a>
+                    </div>
+                </div>
+            </div>
 
 
-    // evento para el input radio del "si"
-    document.getElementById('flexRadioDefault2').addEventListener('click', function(e) {
-        console.log('Vamos a habilitar el campo para el adjunto');
-        adjunto.disabled = false;
-        dato1.disabled = true;
-        dato2.disabled = true;
-        iteraciones.disabled = true;
-        avance.disabled = true;
-    });
-
-    // evento para el input radio del "no"
-    document.getElementById('flexRadioDefault1').addEventListener('click', function(e) {
-        console.log('Vamos a deshabilitar el campo para el adjunto');
-        adjunto.disabled = true;
-        dato1.disabled = false;
-        dato2.disabled = false;
-        iteraciones.disabled = false;
-        avance.disabled = false;
-    });
-
-    // evento para habilitar campo otro1
-    document.getElementById('numeros_inicio').addEventListener('click', function(e) {
-        if (document.formulario.numeros_inicio.selectedIndex == 4) {
-            console.log('Vamos a habilitar el campo para el adjunto');
-            otro1.disabled = false;
-        }
-
-    });
-
-    //evento para desabilitar campo otro1
-    document.getElementById('numeros_inicio').addEventListener('click', function(e) {
-        if (document.formulario.numeros_inicio.selectedIndex != 4) {
-            console.log('Vamos a habilitar el campo para el adjunto');
-            otro1.disabled = true;
-        }
-    });
-    // evento para habilitar campo otro2
-    document.getElementById('avance_iteracion').addEventListener('click', function(e) {
-        if (document.formulario.avance_iteracion.selectedIndex == 4) {
-            console.log('Vamos a habilitar el campo para el adjunto');
-            otro2.disabled = false;
-        }
-
-    });
-
-    //evento para desabilitar campo otro2
-    document.getElementById('avance_iteracion').addEventListener('click', function(e) {
-        if (document.formulario.avance_iteracion.selectedIndex != 4) {
-            console.log('Vamos a habilitar el campo para el adjunto');
-            otro2.disabled = true;
-        }
-    });
-
-    document.getElementById('flexRadioDefault2').addEventListener('click', function(e) {
-        console.log('Vamos a deshabilitar el campo para el adjunto');
-        inicio.disabled = true;
-    });
-    document.getElementById('flexRadioDefault1').addEventListener('click', function(e) {
-        console.log('Vamos a deshabilitar el campo para el adjunto');
-        inicio.disabled = false;
-    });
-
-    $(window).load(function() {
-        $(".loader").fadeOut("slow");
-    });
-    </script>
-    <footer class="bg-light text-center text-lg-start">
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2022 Copyright
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
-    </footer>
 </body>
+
+<script>
+var windowWidth = window.innerWidth;
+var windowHeight = window.innerHeight;
+
+console.log(windowWidth);
+console.log(windowHeight);
+
+document.getElementById("slider1").style.width = `${windowWidth}px`;
+document.getElementById("slider1").style.height = `${windowHeight}px`;
+document.getElementById("slider2").style.width = `${windowWidth}px`;
+document.getElementById("slider2").style.height = `${windowHeight}px`;
+document.getElementById("slider3").style.width = `${windowWidth}px`;
+document.getElementById("slider3").style.height = `${windowHeight}px`;
+document.getElementById("slider4").style.width = `${windowWidth}px`;
+document.getElementById("slider4").style.height = `${windowHeight}px`;
+document.getElementById("slider5").style.width = `${windowWidth}px`;
+document.getElementById("slider5").style.height = `${windowHeight}px`;
+</script>
 
 </html>
